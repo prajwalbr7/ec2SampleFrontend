@@ -2,12 +2,12 @@ FROM node:18-alpine AS build
 
 WORKDIR /app
 
-COPY form/package.json form/package-lock.json ./
+COPY package.json package-lock.json ./
 
 RUN npm install
 
-COPY form/src ./src
-COPY form/public ./public
+COPY src ./src
+COPY public ./public
 
 RUN npm run build
 
